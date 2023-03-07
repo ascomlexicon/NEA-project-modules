@@ -5,6 +5,7 @@
 import unittest
 from nea_modules.web_scraper import WebScraper
 
+# Unit tests
 class TestWebScraper(unittest.TestCase):
     """This class contains the unit tests for the web scraper module."""
 
