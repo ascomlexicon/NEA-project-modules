@@ -3,7 +3,7 @@
 
 # Libraries
 import unittest
-from nea_modules.web_scraper import WebScraper
+import web_scraper as ws
 
 # Unit tests
 class TestWebScraper(unittest.TestCase):
@@ -12,8 +12,8 @@ class TestWebScraper(unittest.TestCase):
     def setUp(self) -> None:
         """This method sets up the test fixture before exercising it."""
 
-        self.wikipedia_url = "https://en.wikipedia.org/wiki/Greenhouse_gas_emissions_by_country"
-        self.scraper = WebScraper(self.wikipedia_url)
+        self.wikipedia_url = "https://en.wikipedia.org/wiki/Greenhouse_gas_emissions"
+        self.scraper = ws.WebScraper(self.wikipedia_url)
     
     def test_correct_url(self):
         """This method tests if the url is saved correctly."""
@@ -29,3 +29,6 @@ class TestWebScraper(unittest.TestCase):
         """This method tests if the tables are retrieved correctly."""
 
         self.assertGreaterEqual(len(self.scraper.get_tables()), 1)
+
+if __name__ == "__main__":
+    unittest.main()
